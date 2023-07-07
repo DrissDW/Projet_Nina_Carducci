@@ -154,8 +154,10 @@
         }
       });
       next =
-        imagesCollection[index] ||
-        imagesCollection[imagesCollection.length - 1];
+        // imagesCollection[index] ||
+        // imagesCollection[imagesCollection.length - 1];
+        next = imagesCollection[(index - 1 + imagesCollection.length) % imagesCollection.length];
+
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     nextImage() {
@@ -192,7 +194,8 @@
           index = i;
         }
       });
-      next = imagesCollection[index] || imagesCollection[0];
+      // next = imagesCollection[index] || imagesCollection[0];
+      next = imagesCollection[(index + 1) % imagesCollection.length];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     createLightBox(gallery, lightboxId, navigation) {

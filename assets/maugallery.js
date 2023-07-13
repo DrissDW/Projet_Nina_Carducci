@@ -153,7 +153,7 @@
           index = i ;
         }
       });
-      next =
+      // next =
         // imagesCollection[index] ||
         // imagesCollection[imagesCollection.length - 1];
         next = imagesCollection[(index - 1 + imagesCollection.length) % imagesCollection.length];
@@ -242,8 +242,8 @@
       if ($(this).hasClass("active-tag")) {
         return;
       }
-      $(".active-tag").removeClass("active active-tag");
-      $(this).addClass("active-tag");
+       $(".active-tag").removeClass("active active-tag");
+       $(this).addClass("active active-tag");
 
       var tag = $(this).data("images-toggle");
 
@@ -261,6 +261,7 @@
             .show(300);
         }
       });
+      
     }
   };
 })(jQuery);
